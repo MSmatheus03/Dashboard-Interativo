@@ -15,10 +15,10 @@ if regioes:
 
 # 2 métricas
 # faturamento total
-st.metric('Faturamento Total',f'R${tabela['Valor Venda'].sum()}')
+st.metric('Faturamento Total',f'R${tabela['Valor Venda'].sum():.2f}')
 
 # ticket médio
-st.metric('Ticket Médio',f'R${tabela['Valor Venda'].mean()}')
+st.metric('Ticket Médio',f'R${tabela['Valor Venda'].mean():.2f}')
 
 # gráfico faturamento por região
 st.bar_chart(tabela.groupby('Região')['Valor Venda'].sum())
@@ -27,3 +27,4 @@ st.bar_chart(tabela.groupby('Região')['Valor Venda'].sum())
 # gráfico faturamento por produto
 
 st.bar_chart(tabela.groupby('Produto')['Valor Venda'].sum())
+
